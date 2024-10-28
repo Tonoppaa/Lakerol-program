@@ -1,0 +1,21 @@
+.container {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid white;
+    font-size: 18px;
+    color: #fff;
+    padding: 20px 45px 20px 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+p {
+    margin-bottom: 15px; /* Lisää tilaa p-elementin alapuolelle */
+    margin-top: 15px;
+}
+
+li {
+    margin-bottom: 15px;
+}

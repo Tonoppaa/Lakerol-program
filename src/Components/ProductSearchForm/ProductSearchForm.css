@@ -1,0 +1,120 @@
+h3 {
+  color: white;
+}
+
+.product-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: -40px;
+  position: sticky;
+}
+
+.search-box {
+  /* Voit säätää hakulaatikon ulkoasua */
+  background-color: rgba(26, 12, 12, 0.719);
+  border: 4px solid #fff;
+  border-radius: 15px;
+  padding: 30px 40px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+select {
+  /* Tyylitellään <select> elementti */
+  width: 100%; /* Ota koko leveys käyttöön */
+  padding: 10px; /* Lisää tilaa valintalistalle */
+  border: 2px solid #007bff; /* Reunaviiva */
+  border-radius: 5px; /* Pyöristetyt kulmat */
+  color: #000; /* Tekstin väri */
+  font-size: 16px; /* Fonttikoko */
+  cursor: pointer; /* Muuttaa osoittimen */
+  transition: border-color 0.3s; /* Siirtymä reunavärissä */
+}
+
+select:hover {
+  border-color: #0056b3; /* Tummempi reunaväri hover-tilassa */
+}
+
+.hakukentta, .empty-button-location {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.message-box {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-top: -40px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  position: absolute; /* Kiinnitetään paikka */
+  top: -10px; /* Määritetään sijainti hakulaatikon yläpuolelle */
+  left: 50%; /* Kohdistetaan keskelle */
+  transform: translateX(-50%); /* Keskitetään vaakatasossa */
+  z-index: 2; /* Nostetaan kerrosta varmistamaan näkyvyys */
+}
+
+.result-container {
+  display: flex;
+  width: 1100px;
+  height: 80px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.product-card {
+  flex: 0 0 calc(20% - 20px); /* Kahden kortin koko vierekkäin */
+  box-sizing: border-box;
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.search-input {
+  flex: 1; /* Hakee niin paljon tilaa kuin mahdollista */
+  padding: 10px; /* Lisää sisätilaa hakukenttään */
+  border: 2px solid #007bff; /* Reunaviiva hakukenttään */
+  border-radius: 5px; /* Pyöristetyt kulmat */
+  color: #000; /* Tekstin väri hakukentässä */
+}
+
+button {
+  padding: 10px 20px; /* Sisätilat nappiin */
+  border: none; /* Ei reunaviivaa */
+  border-radius: 5px; /* Pyöristetyt kulmat */
+  cursor: pointer; /* Muuttaa osoittimen */
+  transition: background-color 0.3s; /* Pehmeä siirtyminen */
+}
+
+button:hover {
+  background-color: #0056b3; /* Tumma taustaväri hover-tilassa */
+}
+
+.empty-button-location button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.empty-button-location button:hover {
+  background-color: #0099cc;
+}

@@ -1,0 +1,43 @@
+.product-container {
+    display: flex;
+    flex-wrap: wrap; /* Sallii elementtien siirtyä seuraavalle riville */
+    justify-content: center;
+    margin-top: 100px;
+    gap: 10px; /* Lisää hieman tilaa korttien väliin */
+  }
+
+  .product-info {
+    width: 1000px; /* Rajaa kortin leveyden, pienempi kuin aiempi 1020px */
+    margin: 20px; /* Tilaa kortin ympärille */
+    border: 3px solid #ccc;
+    padding: 20px; /* Lisää sisäistä tyhjennystä */
+    border-radius: 10px;
+    text-align: center; /* Keskittää tekstin ja kuvan */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* Tausta väri */
+}
+
+.product-info img{
+    max-width: 150px; /* Rajaa kuvan maksimi leveyden */
+    height: auto; /* Säilyttää kuvan mittasuhteet */
+    margin-top: 30px; /* Lisää tilaa korttien väliin */
+}
+
+/*p {
+    text-align: left;
+    margin-top: 20px;
+}*/
+
+.product-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .product-container button:hover {
+    background-color: #0056b3;
+  }

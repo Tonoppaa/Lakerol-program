@@ -1,0 +1,49 @@
+.product-container {
+    display: flex;
+    flex-wrap: wrap; /* Sallii elementtien siirtyä seuraavalle riville */
+    justify-content: space-around; /* Jakaa kortit tasaisesti */
+    margin-top: 100px;
+    gap: 10px; /* Lisää hieman tilaa korttien väliin */
+  }
+  
+  .product-card {
+    display: flex; /* Ota käyttöön flexbox */
+    flex-direction: column; /* Aseta sisällön suunta pystysuoraksi */
+    justify-content: space-between; /* Työnnä nappi alas */
+    flex: 1 1 calc(50% - 20px); /* Vie 50% säiliön leveydestä kahden kortin asettelulle */
+    box-sizing: border-box; /* Varmistaa, että padding ja marginaalit sisältyvät leveyteen */
+    margin: 10px 0; /* Tilaa korttien ylä- ja alapuolelle */
+    border: 1px solid #ccc; /* Reunaviiva */
+    padding: 10px; /* Sisäinen tyhjennys */
+    border-radius: 5px; /* Pyöristetyt kulmat */
+    text-align: center; /* Keskittää tekstin */
+    color: white;
+    max-width: calc(50% - 200px); /* Rajaa kortin maksimi leveys */
+    background-color: rgba(0, 0, 0, 0.7); /* Tausta väri */
+  }
+  
+  .product-card img {
+    width: 100%; /* Kuva mukautuu kortin leveyteen */
+    max-height: 150px; /* Rajaa kuvan korkeuden */
+    object-fit: contain; /* Säilyttää mittasuhteet ja sijoittaa kuvan kortin sisään */
+    border-radius: 5px; /* Lisää kevyesti pyöristetyt reunat kuvalle */
+    margin-bottom: 10px; /* Lisää hieman tilaa kuvan ja tekstin väliin */
+  }
+  
+  .product-card button {
+    background-color: #007bff; /* Sininen taustaväri */
+    color: white; /* Valkoinen teksti */
+    border: none; /* Ei reunaviivaa */
+    padding: 10px 20px; /* Sisäinen tyhjennys */
+    border-radius: 5px; /* Pyöristetyt kulmat */
+    cursor: pointer; /* Muuttaa osoittimen osoittimeksi */
+    margin-top: 10px; /* Lisää tilaa napin ylle */
+  }
+  
+  .product-card button:hover {
+    background-color: #0056b3; /* Tummempi sininen, kun hiiri on napin päällä */
+  }
+
+  p {
+    text-align: left;
+  }
