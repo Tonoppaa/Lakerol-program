@@ -24,7 +24,7 @@ const ProductPageForm = () => {
 
   useEffect(() => {
     // Haetaan tuotteet API:sta
-    fetch(process.env.production.REACT_APP_API_URL + 'Tuote')
+    fetch(process.env.REACT_APP_API_URL + 'Tuote')
       .then(response => response.json())
       .then(data => {
         setProducts(data);
