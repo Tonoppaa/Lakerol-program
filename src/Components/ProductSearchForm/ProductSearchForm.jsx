@@ -18,7 +18,7 @@ const ProductSearchForm = () => {
   // Tietojen haku API:sta
   useEffect(() => {
     // Hae attribuutit
-    fetch(process.env.REACT_APP_API_URL + 'Tuote/attribuutit')
+    fetch(process.env.production.REACT_APP_API_URL + 'Tuote/attribuutit')
       .then(response => response.json())
       .then(data => {
         // console.log("Attribuutit API:sta:", data); Testaus, mitä attribuutteja konsoliin tulee tietokannasta
@@ -53,7 +53,7 @@ const ProductSearchForm = () => {
   }
 
     // Tee haku API:sta
-    fetch(`${process.env.REACT_APP_API_URL}Tuote?searchTerm=${encodeURIComponent(trimmedInput)}`)
+    fetch(`${process.env.production.REACT_APP_API_URL}Tuote?searchTerm=${encodeURIComponent(trimmedInput)}`)
       .then(response => response.json())
       .then(data => {
         if (data.length > 0) {
