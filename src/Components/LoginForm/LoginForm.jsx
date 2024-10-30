@@ -10,7 +10,7 @@ const LoginForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("https://localhost:7027/api/Kayttaja/Login", {
+        const response = await fetch(process.env.REACT_APP_API_URL + "/kayttaja/Login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ Kayttaja_Id: username, Salasana: password })

@@ -14,10 +14,13 @@ function App() {
 
   return (
     <>
-      {/* Näytetään Navbar vain jos polku ei ole /login */}
-      {location.pathname !== "/login" && <Navbar />}
+        {/* Näytetään Navbar vain jos polku ei ole / tai /login */}
+        {location.pathname !== "/" && location.pathname !== "/login" && <Navbar />}
 
       <Routes>
+        {/* Aloitussivu, ohjaa käyttäjän kirjautumissivulle */}
+        <Route path="/" element={<LoginForm />} />
+
         {/* Kirjautumissivu */}
         <Route path="/login" element={<LoginForm />} />
 

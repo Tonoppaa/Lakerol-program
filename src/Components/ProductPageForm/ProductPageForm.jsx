@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { variables } from '../../Variables.js'; // Backend-yhteyteen tarvittavat tiedot
 import { useNavigate } from 'react-router-dom'; // Hook navigointiin
 import './ProductPageForm.css'; // Tuodaan tarvittavat tyylit
 
@@ -25,7 +24,7 @@ const ProductPageForm = () => {
 
   useEffect(() => {
     // Haetaan tuotteet API:sta
-    fetch(variables.API_URL + 'Tuote')
+    fetch(process.env.REACT_APP_API_URL + 'Tuote')
       .then(response => response.json())
       .then(data => {
         setProducts(data);
@@ -42,9 +41,10 @@ const ProductPageForm = () => {
     <div className="product-container">
       {products.map((product) => (
         <div className="product-card" key={product.tuote_Id}>
-                    {product.tuote_Kuva_Base64 ? (
+
+                    {product.tuote_Kuva_Url ? (
             <img
-              src={`data:image/jpeg;base64,${product.tuote_Kuva_Base64}`}
+              src={product.tuote_Kuva_Url}
               alt={product.tuote_Nimi}
             />
           ) : (

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { variables } from '../../Variables.js'; // Backend-yhteyteen tarvittavat tiedot
 import { useNavigate } from 'react-router-dom';
 import "./ProductSearchForm.css";
 
@@ -20,14 +19,14 @@ const ProductSearchForm = () => {
   // Tietojen haku API:sta
   useEffect(() => {
     // Hae tuotteet
-    fetch(variables.API_URL + 'Tuote')
+    fetch(process.env.REACT_APP_API_URL + 'Tuote')
       .then(response => response.json())
       .then(data => {
         setProducts(data); // Tuotteiden sijoittaminen tilaan
       });
 
     // Hae attribuutit
-    fetch(variables.API_URL + 'Tuote/attribuutit')
+    fetch(process.env.REACT_APP_API_URL + 'Tuote/attribuutit')
       .then(response => response.json())
       .then(data => {
         // console.log("Attribuutit API:sta:", data); Testaus, mitä attribuutteja konsoliin tulee tietokannasta
@@ -62,7 +61,7 @@ const ProductSearchForm = () => {
   }
 
     // Tee haku API:sta
-    fetch(`${variables.API_URL}Tuote?searchTerm=${encodeURIComponent(trimmedInput)}`)
+    fetch(`${process.env.REACT_APP_API_URL}Tuote?searchTerm=${encodeURIComponent(trimmedInput)}`)
       .then(response => response.json())
       .then(data => {
         if (data.length > 0) {
@@ -124,8 +123,14 @@ const ProductSearchForm = () => {
       <div className="result-container">
         {searchResults.map((product) => (
           <div className="product-card" key={product.tuote_Id}>
-            <img src={`data:image/jpeg;base64,${product.tuote_Kuva_Base64}`}
-            alt={product.tuote_Nimi} />
+                    {product.tuote_Kuva_Url ? (
+            <img
+              src={product.tuote_Kuva_Url}
+              alt={product.tuote_Nimi}
+            />
+          ) : (
+            <p>Ei kuvaa saatavilla</p>
+          )}
             <h3>{product.tuote_Nimi}</h3>
             <p>Paino: {product.tuote_Paino}</p>
             <p>EAN-koodi: {product.tuote_Id}</p>
