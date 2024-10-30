@@ -4,7 +4,6 @@ import "./ProductSearchForm.css";
 
 const ProductSearchForm = () => {
   const [searchInput, setSearchInput] = useState(""); // Hakusana
-  const [products, setProducts] = useState([]); // Hae tuotteet
   const [searchResults, setSearchResults] = useState([]); // Haku tulokset
   const [message, setMessage] = useState(""); // Viesti käyttäjälle
   const [searchField, setSearchField] = useState("tuote_nimi"); // Valinta haettavasta kentästä
@@ -18,13 +17,6 @@ const ProductSearchForm = () => {
 
   // Tietojen haku API:sta
   useEffect(() => {
-    // Hae tuotteet
-    fetch(process.env.REACT_APP_API_URL + 'Tuote')
-      .then(response => response.json())
-      .then(data => {
-        setProducts(data); // Tuotteiden sijoittaminen tilaan
-      });
-
     // Hae attribuutit
     fetch(process.env.REACT_APP_API_URL + 'Tuote/attribuutit')
       .then(response => response.json())

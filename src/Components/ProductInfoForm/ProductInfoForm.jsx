@@ -15,14 +15,14 @@ const ProductInfoForm = () => {
     <div className="product-container">
       <div className="product-info">
         <h2>{product.tuote_Nimi}</h2>
-        {product.tuote_Kuva_Base64 ? (
-              <img
-                src={`data:image/jpeg;base64,${product.tuote_Kuva_Base64}`}
-                alt={product.tuote_Nimi}
-              />
-            ) : (
-              <p>Ei kuvaa saatavilla</p>
-            )}
+        {product.tuote_Kuva_Url ? (
+            <img
+              src={product.tuote_Kuva_Url}
+              alt={product.tuote_Nimi}
+            />
+          ) : (
+            <p>Ei kuvaa saatavilla</p>
+          )}
         <p>{product.tuote_Kuvaus}</p>
         <p>Paino: {product.tuote_Paino}</p>      
         <p>EAN-koodi: {product.tuote_Id}</p>
