@@ -1,3 +1,5 @@
+This program is frontend part for lakerol-app. It is created with React.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
